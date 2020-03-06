@@ -18,7 +18,6 @@ trait TService {
      */
     protected def getUserBehaviorDatas() = {
         val dataDS: DataStream[String] = getDao.readTextFile("input/UserBehavior.csv")
-
         // TODO 1. 将原始数据进行封装对象，方便后续使用
         val userBehaviorDS: DataStream[UserBehavior] = dataDS.map(
             data => {

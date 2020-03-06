@@ -1,5 +1,6 @@
 package com.gdj.bigdata.flink.util
 
+import org.apache.flink.streaming.api.TimeCharacteristic
 import org.apache.flink.streaming.api.scala.StreamExecutionEnvironment
 
 /**
@@ -16,6 +17,7 @@ object FlinkStreamEnv {
             StreamExecutionEnvironment.getExecutionEnvironment
 
         env.setParallelism(1)
+        env.setStreamTimeCharacteristic(TimeCharacteristic.EventTime)
 
         envLocal.set(env)
 //        env.setStateBackend()
