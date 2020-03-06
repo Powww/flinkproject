@@ -6,5 +6,23 @@ package com.gdj.bigdata.flink
  *
  */
 package object bean {
+  /**
+   * 用户行为数据
+   */
+  case class UserBehavior(
+                           userId:Long,
+                           itemId:Long,
+                           categroyId:Long,
+                           behavior:String,
+                           timestamp:Long)
 
+  /**
+   * 热门商品点击
+   * @param itemId
+   * @param clickCount
+   */
+  case class HotItemClick(
+                           itemId:Long,
+                           clickCount:Long,
+                           windowEndTime:Long)
 }
